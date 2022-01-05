@@ -10,8 +10,9 @@ public class sqServlet extends HttpServlet
 {	
 	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
 		
-		
-		System.out.println("sq is called");
+	     	int k = Integer.parseInt(req.getParameter("k"));
+		k=k*k;
+		res.getWriter().println("result is :"+k);
 		
 	}
 	
