@@ -15,16 +15,8 @@ public class addServlet extends HttpServlet {
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		int k = i+j;
-	//	PrintWriter out =res.getWriter();
-	 //   out.println("result is : "+ k);
-	 // res.getWriter().println("result is :" + k);   // optional we can also directly use this
-	
-	RequestDispatcher rd =req.getRequestDispatcher("sq");
-	//RequestDispatcher is a interface so we can't instantiate it.
-	req.setAttribute("k", k);
-	rd.forward(req, res);
-	//to share data between 2 servlets we use concept of session management
-	 //since there is also req obj in sqservlet we are inputting k data to it.
+		res.sendRedirect("sq");
+	 
 	}
 
 }
