@@ -9,12 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 public class sqServlet extends HttpServlet
 {	
 	public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
-	
-		HttpSession session = req.getSession();
-		int k = (int)session.getAttribute("k");
-		k = k*k;
+		int k = 0;
+		Cookie cookies[] = req.getCookies();
+		for (Cookie c : cookies) {
+			if (c.getName().equals("k"))
+				k = Integer.parseInt(c.getValue());
+		}
+
+		k = k * k;
 		PrintWriter out = res.getWriter();
-		out.println("result is :" +k);
+		out.println("result is :" + k);
 		
 	}
 	
