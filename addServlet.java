@@ -15,7 +15,7 @@ public class addServlet extends HttpServlet {
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		int k = i+j;
-		res.sendRedirect("sq?k="+k); // what we have done here is URL rewriting comes under session management 
+		res.sendRedirect("sq?k="+k); // what we have done here is URL rewriting comes under session management other are session & cookies
 	 
 	}
 
