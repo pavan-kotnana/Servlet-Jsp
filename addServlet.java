@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Cookie;
+import javax.servlet.annotation.*;
 
 @SuppressWarnings("serial")
+@WebServlet("/add")
 public class addServlet extends HttpServlet {
 //we need to use method in java to do something.servlet provides service
 	//below instead of service method we can use doGet &doPost menthods for get/post requests accordingly
