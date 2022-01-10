@@ -1,8 +1,9 @@
-package com.pavan;
+package com.navap;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +15,11 @@ public class MyServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		out.println("hi ");
-	ServletContext ctx = getServletContext();
-	String str = ctx.getInitParameter("name");  //this method gives the value of the specified attribute
-	  out.println(str);
+	// ServletContext ctx = getServletContext();
+	//String str = ctx.getInitParameter("name");  //this method gives the value of the specified attribute
+	 ServletConfig cg = getServletConfig();
+	 String str = cg.getInitParameter("name");
+		out.println(str);
 	
 		
 		
